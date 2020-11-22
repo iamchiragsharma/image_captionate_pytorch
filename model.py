@@ -3,7 +3,7 @@ import torch.nn as nn
 import torchvision.models as models
 
 class EncoderCNN(nn.Module):
-    def __init(self, embed_size, trainCNN = False):
+    def __init__(self, embed_size, trainCNN = False):
         super(EncoderCNN, self).__init__()
 
         self.trainCNN = trainCNN
@@ -66,7 +66,7 @@ class CNNtoRNN(nn.Module):
 
             for _ in range(max_len):
                 hiddens, states = self.decoderRNN.lstm(x, states)
-                outputs = self.decoderRNN.linear(hiddens.unsqueeze(0))
+                outputs = self.decoderRNN.linear(hiddens.squeeze(0))
                 predicted = outputs.argmax(1)
 
                 result_caption.append(predicted.item())
