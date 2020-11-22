@@ -46,3 +46,5 @@ encoderCNN = EncoderCNN(256)
 for epoch in range(10):
     for idx, (images, captions) in enumerate(train_loader):
         outputs = encoderCNN(images)
+        break
+    break
