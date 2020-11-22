@@ -16,7 +16,7 @@ class EncoderCNN(nn.Module):
     def forward(self, images):
         features = self.inception(images)
 
-        for name,param  in self.inception.parameters():
+        for name,param  in self.encoderCNN.inception.parameters():
             if "fc.weight" in name or "fc.bias" in name:
                 param.require_grad = True
             else:
