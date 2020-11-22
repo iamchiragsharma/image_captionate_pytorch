@@ -58,6 +58,7 @@ class CNNtoRNN(nn.Module):
         return outputs
 
     def caption_image(self, image, vocabulary, max_len = 50):
+        print("Entered Caption Image")
         result_caption = []
 
         with torch.no_grad():

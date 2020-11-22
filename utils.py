@@ -19,7 +19,6 @@ def print_examples(model, device, dataset):
         "Example 1 OUTPUT: "
         + " ".join(model.caption_image(test_img1.to(device), dataset.vocab))
     )
-
     test_img2 = transform(Image.open("test_examples/child.jpg").convert("RGB")).unsqueeze(0)
     print("Example 2 CORRECT: Child holding red frisbee outdoors")
     print(

@@ -17,8 +17,6 @@ import torchvision.transforms as transforms
 
 # Download with: python -m spacy download en
 spacy_eng = spacy.load("en")
-
-
 class Vocabulary:
     def __init__(self, freq_threshold):
         self.itos = {0: "<PAD>", 1: "<SOS>", 2: "<EOS>", 3: "<UNK>"}
