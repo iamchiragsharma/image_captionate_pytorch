@@ -61,3 +61,9 @@ def load_checkpoint(checkpoint, model, optimizer):
     optimizer.load_state_dict(checkpoint["optimizer"])
     step = checkpoint["step"]
     return step
+
+def load_model(checkpoint, model):
+  print("=> Loading Model")
+  model.load_state_dict(checkpoint["state_dict"])
+  step = checkpoint["step"]
+  return model,step
