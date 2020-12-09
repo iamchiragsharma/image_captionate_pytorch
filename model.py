@@ -31,7 +31,7 @@ class DecoderRNN(nn.Module):
 
     def forward(self, features, captions):
         embeddings = self.dropout(self.embed(captions))
-        embeddings = torch.cat((features.unsqueeze(1), embeddings), dim=0) 
+        embeddings = torch.cat((features.unsqueeze(0), embeddings), dim=0) 
         #unsqueezing to add timesteps to features
 
         hiddens, _ = self.lstm(embeddings)
